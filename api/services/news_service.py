@@ -97,7 +97,7 @@ class RedditApi(Source):
             raw_res = [news["data"] for news in res]
             return self.map_fields(raw_res)
         except Exception as e:
-            print(e)
+            pass
 
 
 class RedisToken(Source):
@@ -107,7 +107,6 @@ class RedisToken(Source):
 
     async def get(self):
         try:
-            print("here")
             headers = {'User-Agent': 'News/0.0.1'}
             auth = ("wOxuBhRWgfTf-A", "gfOnTkiLM2xCqQ217cSC8G9ZEC09nA")
 
@@ -126,7 +125,7 @@ class RedisToken(Source):
 
 async def get_news(search: Optional[str] = None, sources=[RedditApi, NewsApi]):
     news = redisClient.get('news')
-    if news:
+    if news is None:
         data = []
         for source in sources:
             result = await source().get()
