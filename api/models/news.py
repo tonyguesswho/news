@@ -5,3 +5,4 @@ from typing import Optional
 class News(BaseModel):
     headline: str
     link: str
+    source: str

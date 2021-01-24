@@ -17,6 +17,8 @@ A news aggregator API
 - FastAPI
 - Redis
 
+## Swagger Docs
+http://127.0.0.1:8000/docs
 
 ###  Setting Up For Local Development
 
@@ -62,6 +64,9 @@ A news aggregator API
 	- redis-server
 
 Note - I created test accounts on Reditt to enable easy testing withoit needing to fill out enviromental varaibles
+
+
+
 
 ## Adding other API SOURCES
 
